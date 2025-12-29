@@ -1,16 +1,18 @@
+import Link from 'next/link';
 import React from 'react'
 
 type HeaderProps = {
     brandName?: string
-    items?: { label: string; href?: string }[]
+    items?: { label: string; href: string }[]
 }
 
 const HeaderComponent: React.FC<HeaderProps> = ({
     brandName = 'My fist project',
     items = [
         { label: 'Home', href: '/' },
-        { label: 'Features', href: '/features' },
-        { label: 'Contact', href: '/contact' },
+        { label: 'About', href: '/about' },
+        { label: 'Galley', href: '/gallery' },
+        { label: 'Products', href: '/products' },
     ],
 }) => {
     return (
@@ -24,12 +26,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
                     <ul className="flex items-center space-x-6 m-0 p-0 list-none">
                         {items.map((item) => (
                             <li key={item.label}>
-                                <a
-                                    href={item.href ?? '#'}
-                                    className="text-gray-700 hover:text-gray-900 transition-colors"
-                                >
-                                    {item.label}
-                                </a>
+                                <Link href={item.href}>{item.label}</Link>
                             </li>
                         ))}
                     </ul>
