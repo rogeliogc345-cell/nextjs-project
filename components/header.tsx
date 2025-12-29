@@ -6,7 +6,7 @@ type HeaderProps = {
 }
 
 const HeaderComponent: React.FC<HeaderProps> = ({
-    brandName = 'Brand',
+    brandName = 'My fist project',
     items = [
         { label: 'Home', href: '/' },
         { label: 'Features', href: '/features' },
