@@ -13,6 +13,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
         { label: 'About', href: '/about' },
         { label: 'Galley', href: '/gallery' },
         { label: 'Products', href: '/products' },
+        {label:'Wedding', href: '/boda'},
     ],
 }) => {
     return (
