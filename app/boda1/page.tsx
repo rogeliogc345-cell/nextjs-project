@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 
 import { motion } from "framer-motion"
-import { Heart, MapPin, Utensils, Music, Gift, Plane, Building2 } from "lucide-react"
+import { Heart, MapPin, Utensils, Music, Gift, Plane, Building2,Camera } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
+import { WeddingGallery } from "@/components/wedding-gallery"
 
 
 export default function WeddingPage() {
@@ -429,6 +430,34 @@ export default function WeddingPage() {
           </motion.div>
         </div>
       </section>
+
+
+            
+      {/* Photo Gallery Section */}
+      <section id="gallery" className="py-24 bg-[#FBF8F3]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Camera className="w-8 h-8 text-[#D4AF37]" />
+              <h2 className="font-serif text-5xl text-center text-[#4A5D4A]">Our Memories</h2>
+            </div>
+            <p className="text-center text-[#4A5D4A]/70 mb-16">A glimpse into our journey together</p>
+
+            <WeddingGallery />
+          </motion.div>
+        </div>
+      </section>
+
+
+
+
+            
+
 
       {/* Footer */}
       <footer className="py-12 bg-[#4A5D4A] text-white">
