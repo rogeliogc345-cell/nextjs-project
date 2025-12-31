@@ -14,6 +14,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
         { label: 'Galley', href: '/gallery' },
         { label: 'Products', href: '/products' },
         {label:'Wedding', href: '/boda'},
+        { label: 'Templates', href: '/boda1' },
     ],
 }) => {
     return (
