@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+
 import { motion } from "framer-motion"
 import { Heart, MapPin, Utensils, Music, Gift, Plane, Building2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -9,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import Image from "next/image"
+
 
 export default function WeddingPage() {
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
@@ -64,10 +67,18 @@ export default function WeddingPage() {
       {/* Hero Section */}
       <section id="hero" className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-[#4A5D4A]/10 to-transparent" />
-        <img
-          src="/couple2.jpg"
+       
+        
+        <Image
+        
+        src="/couple2.jpg"
+
+         width={'2400'}
+         height={'2400'}
+         
           alt="Wedding couple"
           className="absolute inset-0 w-full h-full object-cover"
+          
         />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -102,7 +113,7 @@ export default function WeddingPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
           >
             <h2 className="font-serif text-5xl text-center text-[#4A5D4A] mb-16">Nuestra Historia</h2>
 
@@ -127,24 +138,32 @@ export default function WeddingPage() {
               {/* Photo Masonry Gallery */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <img
+                  <Image
                     src="/couple2.jpg"
+                    width={'200'}
+                    height={'200'}
                     alt="Couple photo 1"
                     className="w-full h-[250px] object-cover rounded-lg shadow-lg"
                   />
-                  <img
+                  <Image
                     src="/couple3.jpg"
                     alt="Couple photo 2"
+                    height={'200'}
+                    width={'200'}
                     className="w-full h-[150px] object-cover rounded-lg shadow-lg"
                   />
                 </div>
                 <div className="space-y-4 pt-8">
-                  <img
+                  <Image
+                  height={'200'}
+                  width={'200'}
                     src="/couple4.jpg"
                     alt="Couple photo 3"
                     className="w-full h-[150px] object-cover rounded-lg shadow-lg"
                   />
-                  <img
+                  <Image
+                  height={'200'}
+                  width={'200'}
                     src="/couple5.jpg"
                     alt="Couple photo 4"
                     className="w-full h-[250px] object-cover rounded-lg shadow-lg"
@@ -346,7 +365,7 @@ export default function WeddingPage() {
               <CardContent className="pt-6">
                 <form className="space-y-6">
                   <div>
-                    <Label htmlFor="name" className="text-[#4A5D4A]">
+                    <Label htmlFor="name" className="text-[#4A5D4A] pb-2">
                       Full Name *
                     </Label>
                     <Input
@@ -358,7 +377,7 @@ export default function WeddingPage() {
                   </div>
 
                   <div>
-                    <Label htmlFor="attendance" className="text-[#4A5D4A]">
+                    <Label htmlFor="attendance" className="text-[#4A5D4A] pb-2">
                       Will you be attending? *
                     </Label>
                     <Select>
@@ -373,7 +392,7 @@ export default function WeddingPage() {
                   </div>
 
                   <div>
-                    <Label htmlFor="meal" className="text-[#4A5D4A]">
+                    <Label htmlFor="meal" className="text-[#4A5D4A] pb-2">
                       Meal Preference
                     </Label>
                     <Select>
@@ -391,7 +410,7 @@ export default function WeddingPage() {
                   </div>
 
                   <div>
-                    <Label htmlFor="songs" className="text-[#4A5D4A]">
+                    <Label htmlFor="songs" className="text-[#4A5D4A] pb-2">
                       Song Requests or Dietary Restrictions
                     </Label>
                     <Textarea
